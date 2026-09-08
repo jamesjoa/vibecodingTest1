@@ -1,16 +1,16 @@
 :root {
-  --ink: #14241f;
-  --ink-soft: #3d524a;
-  --muted: #6f837a;
-  --paper: rgba(255, 252, 248, 0.78);
-  --paper-solid: #fffaf5;
-  --line: rgba(20, 36, 31, 0.1);
-  --accent: #e25a3c;
-  --accent-deep: #c4472c;
-  --sage: #2f6b5a;
-  --sage-soft: rgba(47, 107, 90, 0.12);
-  --done: #5a7a6e;
-  --shadow: 0 18px 40px rgba(28, 48, 40, 0.12);
+  --ink: #142338;
+  --ink-soft: #3a4d6b;
+  --muted: #6b7d96;
+  --paper: rgba(248, 251, 255, 0.78);
+  --paper-solid: #f7fbff;
+  --line: rgba(20, 35, 56, 0.1);
+  --accent: #2f6fed;
+  --accent-deep: #1f57cc;
+  --sage: #2a66c8;
+  --sage-soft: rgba(42, 102, 200, 0.12);
+  --done: #5d7394;
+  --shadow: 0 18px 40px rgba(28, 52, 88, 0.12);
   --radius: 18px;
   --radius-sm: 12px;
   --font-display: "Bricolage Grotesque", sans-serif;
@@ -35,9 +35,9 @@ body {
   font-family: var(--font-body);
   color: var(--ink);
   background:
-    radial-gradient(1200px 700px at 12% -10%, #d9ece4 0%, transparent 55%),
-    radial-gradient(900px 600px at 100% 0%, #f4d8c8 0%, transparent 50%),
-    linear-gradient(160deg, #e7f1ec 0%, #f3ebe3 48%, #e8efe9 100%);
+    radial-gradient(1200px 700px at 12% -10%, #d4e6fb 0%, transparent 55%),
+    radial-gradient(900px 600px at 100% 0%, #c8ddf8 0%, transparent 50%),
+    linear-gradient(160deg, #e8f1fc 0%, #edf3fb 48%, #e6eef9 100%);
   overflow-x: hidden;
 }
 
@@ -62,7 +62,7 @@ body {
   height: min(48vw, 420px);
   top: 8%;
   left: -8%;
-  background: #b8d9cc;
+  background: #a9c8f2;
 }
 
 .blob-b {
@@ -70,7 +70,7 @@ body {
   height: min(42vw, 360px);
   right: -6%;
   bottom: 12%;
-  background: #efc4b0;
+  background: #b7d4f7;
   animation-delay: -4s;
   animation-duration: 18s;
 }
@@ -166,7 +166,7 @@ body {
   border-radius: var(--radius-sm);
   padding: 0.85rem 1.15rem;
   background: var(--accent);
-  color: #fffaf7;
+  color: #f5f9ff;
   font-family: var(--font-body);
   font-size: 0.98rem;
   font-weight: 600;
@@ -210,7 +210,7 @@ body {
   display: flex;
   gap: 0.35rem;
   padding: 0.28rem;
-  background: rgba(255, 250, 245, 0.65);
+  background: rgba(245, 249, 255, 0.65);
   border: 1px solid var(--line);
   border-radius: 14px;
 }
@@ -266,7 +266,7 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: 0 8px 20px rgba(28, 48, 40, 0.06);
+  box-shadow: 0 8px 20px rgba(28, 52, 88, 0.06);
   transform-origin: center top;
   animation: item-in 0.45s var(--ease-out) both;
   transition:
@@ -276,7 +276,7 @@ body {
 }
 
 .todo-item:hover {
-  border-color: rgba(47, 107, 90, 0.28);
+  border-color: rgba(42, 102, 200, 0.28);
   transform: translateY(-1px);
 }
 
@@ -288,14 +288,14 @@ body {
   color: var(--done);
   text-decoration: line-through;
   text-decoration-thickness: 1.5px;
-  text-decoration-color: rgba(90, 122, 110, 0.55);
+  text-decoration-color: rgba(93, 115, 148, 0.55);
 }
 
 .check-btn {
   width: 1.55rem;
   height: 1.55rem;
   border-radius: 8px;
-  border: 1.8px solid rgba(47, 107, 90, 0.45);
+  border: 1.8px solid rgba(42, 102, 200, 0.45);
   background: transparent;
   display: grid;
   place-items: center;
@@ -317,7 +317,7 @@ body {
 .todo-item.is-done .check-btn {
   background: var(--sage);
   border-color: var(--sage);
-  color: #f4fff9;
+  color: #f5f9ff;
 }
 
 .check-btn svg {
@@ -367,7 +367,7 @@ body {
 }
 
 .delete-btn:hover {
-  background: rgba(226, 90, 60, 0.12);
+  background: rgba(47, 111, 237, 0.12);
   color: var(--accent);
   transform: scale(1.05);
 }
@@ -380,9 +380,9 @@ body {
 .empty-state {
   text-align: center;
   padding: 2.4rem 1rem;
-  border: 1px dashed rgba(20, 36, 31, 0.18);
+  border: 1px dashed rgba(20, 35, 56, 0.18);
   border-radius: var(--radius);
-  background: rgba(255, 250, 245, 0.35);
+  background: rgba(245, 249, 255, 0.35);
   animation: rise-in 0.45s var(--ease-out) both;
 }
 
