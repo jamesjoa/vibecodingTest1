@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>하루 — 할 일 관리</title>
+    <title>담다 — 게시판</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,84 +21,91 @@
 
     <main class="app">
       <header class="hero">
-        <p class="brand">하루</p>
-        <h1 class="headline">오늘을 가볍게 정리하세요</h1>
-        <p class="subcopy">해야 할 일을 적고, 끝내고, 비우세요.</p>
+        <p class="brand">담다</p>
+        <h1 class="headline">생각을 남기고 이어가세요</h1>
+        <p class="subcopy">글을 쓰고, 읽고, 댓글로 대화를 이어보세요.</p>
       </header>
 
-      <section class="composer" aria-label="할 일 추가">
-        <form id="todo-form" class="todo-form" autocomplete="off">
-          <label class="sr-only" for="todo-input">새 할 일</label>
-          <input
-            id="todo-input"
-            class="todo-input"
-            type="text"
-            placeholder="무엇을 할까요?"
-            maxlength="120"
-            required
-          />
-          <button type="submit" class="add-btn" aria-label="할 일 추가">
-            <span class="add-btn-label">추가</span>
-            <svg class="add-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M12 5v14M5 12h14"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.2"
-                stroke-linecap="round"
-              />
-            </svg>
+      <!-- 목록 -->
+      <section id="view-list" class="view is-active" aria-label="게시글 목록">
+        <div class="toolbar">
+          <p class="count" id="post-count">0개의 글</p>
+          <button type="button" class="primary-btn" id="btn-write">
+            글쓰기
           </button>
+        </div>
+        <ul id="post-list" class="post-list"></ul>
+        <div id="list-empty" class="empty-state" hidden>
+          <p class="empty-title">아직 글이 없어요</p>
+          <p class="empty-text">첫 글을 남겨 게시판을 채워보세요.</p>
+        </div>
+      </section>
+
+      <!-- 작성 -->
+      <section id="view-write" class="view" aria-label="글 작성" hidden>
+        <div class="toolbar">
+          <button type="button" class="ghost-btn" data-nav="list">← 목록</button>
+          <p class="panel-label">새 글 작성</p>
+        </div>
+        <form id="write-form" class="panel-form" autocomplete="off">
+          <label class="field">
+            <span>제목</span>
+            <input id="write-title" name="title" type="text" maxlength="120" required placeholder="제목을 입력하세요" />
+          </label>
+          <label class="field">
+            <span>작성자</span>
+            <input id="write-author" name="author" type="text" maxlength="40" required placeholder="이름" />
+          </label>
+          <label class="field">
+            <span>내용</span>
+            <textarea id="write-content" name="content" rows="8" maxlength="5000" required placeholder="내용을 입력하세요"></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="primary-btn">등록하기</button>
+          </div>
         </form>
       </section>
 
-      <section class="board" aria-label="할 일 목록">
+      <!-- 상세 -->
+      <section id="view-detail" class="view" aria-label="게시글 상세" hidden>
         <div class="toolbar">
-          <div class="filters" role="tablist" aria-label="필터">
-            <button
-              type="button"
-              class="filter-btn is-active"
-              data-filter="all"
-              role="tab"
-              aria-selected="true"
-            >
-              전체
-            </button>
-            <button
-              type="button"
-              class="filter-btn"
-              data-filter="active"
-              role="tab"
-              aria-selected="false"
-            >
-              진행 중
-            </button>
-            <button
-              type="button"
-              class="filter-btn"
-              data-filter="completed"
-              role="tab"
-              aria-selected="false"
-            >
-              완료
-            </button>
+          <button type="button" class="ghost-btn" data-nav="list">← 목록</button>
+        </div>
+        <article class="detail-card" id="detail-card">
+          <h2 class="detail-title" id="detail-title"></h2>
+          <div class="detail-meta">
+            <span id="detail-author"></span>
+            <span id="detail-date"></span>
           </div>
-          <p class="count" id="todo-count" aria-live="polite">0개 남음</p>
-        </div>
+          <p class="detail-content" id="detail-content"></p>
+        </article>
 
-        <ul id="todo-list" class="todo-list"></ul>
-
-        <div id="empty-state" class="empty-state" hidden>
-          <p class="empty-title">아직 할 일이 없어요</p>
-          <p class="empty-text">위에 첫 번째 할 일을 적어보세요.</p>
-        </div>
-
-        <div class="footer-actions">
-          <button type="button" id="clear-completed" class="clear-btn" hidden>
-            완료된 항목 지우기
-          </button>
-        </div>
+        <section class="comments" aria-label="댓글">
+          <h3 class="comments-title">
+            댓글 <span id="comment-count">0</span>
+          </h3>
+          <ul id="comment-list" class="comment-list"></ul>
+          <div id="comments-empty" class="empty-inline" hidden>
+            첫 댓글을 남겨보세요.
+          </div>
+          <form id="comment-form" class="panel-form comment-form" autocomplete="off">
+            <input type="hidden" id="comment-post-id" />
+            <label class="field">
+              <span>작성자</span>
+              <input id="comment-author" type="text" maxlength="40" required placeholder="이름" />
+            </label>
+            <label class="field">
+              <span>댓글</span>
+              <textarea id="comment-content" rows="3" maxlength="5000" required placeholder="댓글을 입력하세요"></textarea>
+            </label>
+            <div class="form-actions">
+              <button type="submit" class="primary-btn">댓글 등록</button>
+            </div>
+          </form>
+        </section>
       </section>
+
+      <p id="toast" class="toast" role="status" aria-live="polite" hidden></p>
     </main>
 
     <script src="script.js"></script>
