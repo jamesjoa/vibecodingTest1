@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문의 | 머스타드씨드</title>
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="contact">
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-logo"><img src="assets/logo.png" alt="" /></span>
+        MUSTARDSEED
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/about">회사소개</a>
+        <a href="/program">프로그램</a>
+        <a href="/news">뉴스</a>
+        <a href="/portfolio">포트폴리오</a>
+        <a class="header-cta is-active" href="/contact">상담 신청</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="메뉴 열기"><span></span></button>
+    </header>
+
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="section-kicker">Contact</p>
+        <h1>문의하기</h1>
+        <p>프로그램 신청, 기업 광고, 협찬·공동구매, 소속 문의를 받습니다.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <form class="form" id="contact-form">
+          <div class="choice-grid" id="category-choices">
+            <button class="choice is-on" type="button" data-value="프로그램 신청">인플루언서<br />프로그램 신청</button>
+            <button class="choice" type="button" data-value="기업 광고">기업 광고<br />문의</button>
+            <button class="choice" type="button" data-value="협찬/공동구매">협찬 / 공동구매<br />문의</button>
+            <button class="choice" type="button" data-value="소속 문의">인플루언서<br />소속 문의</button>
+          </div>
+          <input type="hidden" id="category" name="category" value="프로그램 신청" />
+          <label class="field">
+            <span>이름</span>
+            <input id="name" name="name" required maxlength="40" placeholder="홍길동" />
+          </label>
+          <label class="field">
+            <span>연락처</span>
+            <input id="phone" name="phone" required maxlength="40" placeholder="010-0000-0000" />
+          </label>
+          <label class="field">
+            <span>이메일</span>
+            <input id="email" name="email" type="email" required maxlength="120" placeholder="you@example.com" />
+          </label>
+          <label class="field">
+            <span>문의 내용</span>
+            <textarea id="message" name="message" rows="6" required maxlength="5000" placeholder="진행하고 싶은 내용을 적어 주세요."></textarea>
+          </label>
+          <div>
+            <button class="primary-btn" type="submit">보내기</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <p id="toast" class="toast hidden" role="status" hidden></p>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <div class="footer-logo"><img src="assets/logo.png" alt="머스타드씨드" /></div>
+          <strong>머스타드씨드 주식회사</strong>
+          <p>대표 황요셉</p>
+        </div>
+        <div>
+          <strong>오시는 길</strong>
+          <p>인천광역시 서구 파랑로 495<br />8층 1동 830호</p>
+        </div>
+        <div>
+          <strong>연락처</strong>
+          <p>hello@mustardseed.kr<br />070-0000-0000</p>
+          <p class="sample-note">이메일·전화는 샘플입니다.</p>
+        </div>
+      </div>
+      <div class="wrap"><p class="copyright">© 2026 Mustardseed Corp. · 일부 콘텐츠는 샘플입니다.</p></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

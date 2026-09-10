@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포트폴리오 | 머스타드씨드</title>
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="portfolio">
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-logo"><img src="assets/logo.png" alt="" /></span>
+        MUSTARDSEED
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/about">회사소개</a>
+        <a href="/program">프로그램</a>
+        <a href="/news">뉴스</a>
+        <a class="is-active" href="/portfolio">포트폴리오</a>
+        <a class="header-cta" href="/contact">상담 신청</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="메뉴 열기"><span></span></button>
+    </header>
+
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="section-kicker">Portfolio</p>
+        <h1>포트폴리오</h1>
+        <p>광고, 협찬, 전문가 프로그램 사례입니다. 사진과 영상은 이후 실제 자료로 교체됩니다.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="filters" id="filters">
+          <button class="filter-btn is-on" type="button" data-filter="all">전체</button>
+          <button class="filter-btn" type="button" data-filter="expert">전문가 프로그램</button>
+          <button class="filter-btn" type="button" data-filter="creator">일반인 프로그램</button>
+          <button class="filter-btn" type="button" data-filter="campaign">광고 · 협찬</button>
+        </div>
+        <div class="work-grid" id="work-grid">
+          <article class="work-card" data-cat="expert" data-title="김태영 원장" data-desc="서울대 치과 전문의. 신규 개원 2개월 만에 대기 환자가 주 4~5명에서 70명으로 늘었습니다. 최다 조회수 73만.">
+            <div class="work-thumb">김</div>
+            <div class="work-body"><strong>김태영 원장</strong><span class="tag">전문가 프로그램 · 치과</span></div>
+          </article>
+          <article class="work-card" data-cat="expert" data-title="박요셉 대표" data-desc="주방 인테리어 대표. 계약 한 달 만에 하루 문의 전화 30~50건이 발생했습니다. 최다 조회수 10만.">
+            <div class="work-thumb alt-2" style="background: radial-gradient(circle at 70% 30%, rgba(180, 90, 255, 0.4), transparent 42%), linear-gradient(160deg, #24182f, #0b1220)">박</div>
+            <div class="work-body"><strong>박요셉 대표</strong><span class="tag">전문가 프로그램 · 인테리어</span></div>
+          </article>
+          <article class="work-card" data-cat="creator" data-title="냐냐효빈" data-desc="육아·리뷰 콘텐츠. 6개월간 광고 50건, 최다 조회수 120만. 카카오톡·G마켓 인플루언서 앰버서더.">
+            <div class="work-thumb" style="background: radial-gradient(circle at 40% 60%, rgba(90, 210, 180, 0.35), transparent 45%), linear-gradient(160deg, #16303a, #0b1220)">효</div>
+            <div class="work-body"><strong>냐냐효빈</strong><span class="tag">일반인 프로그램 · 육아</span></div>
+          </article>
+          <article class="work-card" data-cat="creator" data-title="다람지율 가족" data-desc="키즈 크리에이터 가족 계정. 최다 조회수 300만, 계약 3개월 후 첫 광고 진행.">
+            <div class="work-thumb" style="background: radial-gradient(circle at 60% 40%, rgba(255, 170, 80, 0.4), transparent 45%), linear-gradient(160deg, #3a2416, #0b1220)">다</div>
+            <div class="work-body"><strong>다람지율 가족</strong><span class="tag">일반인 프로그램 · 키즈</span></div>
+          </article>
+          <article class="work-card" data-cat="campaign" data-title="달콤왕가탕후루 캠페인" data-desc="총괄 마케팅 캠페인 샘플 카드입니다. 실제 소재와 성과 수치는 자료 수급 후 반영합니다.">
+            <div class="work-thumb" style="background: radial-gradient(circle at 50% 40%, rgba(255, 80, 120, 0.45), transparent 46%), linear-gradient(160deg, #3a1520, #0b1220)">탕</div>
+            <div class="work-body"><strong>달콤왕가탕후루</strong><span class="tag">광고 캠페인 · 샘플</span></div>
+          </article>
+          <article class="work-card" data-cat="campaign" data-title="공동구매 라이브 캠페인" data-desc="라이브커머스·공동구매 운영 샘플입니다. 브랜드명과 영상은 이후 교체됩니다.">
+            <div class="work-thumb" style="background: radial-gradient(circle at 30% 30%, rgba(91, 134, 255, 0.5), transparent 45%), linear-gradient(160deg, #15203a, #0b1220)">라</div>
+            <div class="work-body"><strong>공동구매 라이브</strong><span class="tag">협찬 · 공동구매 · 샘플</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal hidden" id="work-modal" hidden>
+      <div class="modal-card">
+        <p class="section-kicker">Portfolio</p>
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+        <p class="sample-note">영상 임베드는 자료 도착 후 연결됩니다.</p>
+        <p><button class="primary-btn" type="button" id="modal-close">닫기</button></p>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <div class="footer-logo"><img src="assets/logo.png" alt="머스타드씨드" /></div>
+          <strong>머스타드씨드 주식회사</strong>
+        </div>
+        <div>
+          <strong>오시는 길</strong>
+          <p>인천광역시 서구 파랑로 495, 8층 1동 830호</p>
+        </div>
+        <div>
+          <strong>연락처</strong>
+          <p>hello@mustardseed.kr · 070-0000-0000</p>
+        </div>
+      </div>
+      <div class="wrap"><p class="copyright">© 2026 Mustardseed Corp. · 일부 콘텐츠는 샘플입니다.</p></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

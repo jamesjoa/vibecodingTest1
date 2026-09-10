@@ -3,112 +3,192 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>담다 — 게시판</title>
+    <title>머스타드씨드 | 전문가를 인플루언서로</title>
+    <meta
+      name="description"
+      content="머스타드씨드 주식회사는 전문가 인플루언서 프로그램, 숏폼 제작, 광고·협찬·공동구매를 다루는 인플루언서 마케팅 전문 기업입니다."
+    />
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div class="atmosphere" aria-hidden="true">
-      <div class="blob blob-a"></div>
-      <div class="blob blob-b"></div>
-      <div class="grain"></div>
-    </div>
+  <body data-page="home">
+    <a class="skip" href="#main">본문 바로가기</a>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-logo"><img src="assets/logo.png" alt="" /></span>
+        MUSTARDSEED
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/about">회사소개</a>
+        <a href="/program">프로그램</a>
+        <a href="/news">뉴스</a>
+        <a href="/portfolio">포트폴리오</a>
+        <a class="header-cta" href="/contact">상담 신청</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="메뉴 열기"><span></span></button>
+    </header>
 
-    <main class="app">
-      <header class="hero">
-        <p class="brand">담다</p>
-        <h1 class="headline">생각을 남기고 이어가세요</h1>
-        <p class="subcopy">글을 쓰고, 읽고, 댓글로 대화를 이어보세요.</p>
-      </header>
-
-      <!-- 목록 -->
-      <section id="view-list" class="view is-active" aria-label="게시글 목록">
-        <div class="toolbar">
-          <p class="count" id="post-count">0개의 글</p>
-          <button type="button" class="primary-btn" id="btn-write">
-            글쓰기
-          </button>
-        </div>
-        <ul id="post-list" class="post-list"></ul>
-        <div id="list-empty" class="empty-state" hidden>
-          <p class="empty-title">아직 글이 없어요</p>
-          <p class="empty-text">첫 글을 남겨 게시판을 채워보세요.</p>
+    <main id="main">
+      <section class="hero">
+        <div class="wrap">
+          <p class="hero-kicker">Influencer Expert Group <span>Since 2019</span></p>
+          <h1>전문가를<br />인플루언서로.</h1>
+          <p class="hero-sub">
+            숏폼 제작부터 틱톡·릴스 운영, 전문가 브랜딩, 광고 캠페인까지.
+            인플루언서를 발굴하고 성장시키는 머스타드씨드입니다.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="/contact">프로그램 문의</a>
+            <a class="ghost-btn" href="/about">회사소개 보기</a>
+          </div>
+          <div class="hero-meta">
+            <span>MUSTARDSEED CORP</span>
+            <span>인천 서구 파랑로 495</span>
+            <span>전문가 프로그램 · 광고 · 공동구매</span>
+          </div>
         </div>
       </section>
 
-      <!-- 작성 -->
-      <section id="view-write" class="view" aria-label="글 작성" hidden>
-        <div class="toolbar">
-          <button type="button" class="ghost-btn" data-nav="list">← 목록</button>
-          <p class="panel-label">새 글 작성</p>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>전문가 브랜딩 ✦ 숏폼 제작 ✦ 틱톡 / 릴스 운영 ✦ 인플루언서 육성 ✦ 기업교육 ✦ 광고 캠페인 ✦</span>
+          <span>전문가 브랜딩 ✦ 숏폼 제작 ✦ 틱톡 / 릴스 운영 ✦ 인플루언서 육성 ✦ 기업교육 ✦ 광고 캠페인 ✦</span>
         </div>
-        <form id="write-form" class="panel-form" autocomplete="off">
-          <label class="field">
-            <span>제목</span>
-            <input id="write-title" name="title" type="text" maxlength="120" required placeholder="제목을 입력하세요" />
-          </label>
-          <label class="field">
-            <span>작성자</span>
-            <input id="write-author" name="author" type="text" maxlength="40" required placeholder="이름" />
-          </label>
-          <label class="field">
-            <span>내용</span>
-            <textarea id="write-content" name="content" rows="8" maxlength="5000" required placeholder="내용을 입력하세요"></textarea>
-          </label>
-          <div class="form-actions">
-            <button type="submit" class="primary-btn">등록하기</button>
+      </div>
+
+      <section class="section">
+        <div class="wrap">
+          <p class="section-kicker">About</p>
+          <h2>영상을 만드는 회사가 아닙니다.<br />전문가를 인플루언서로 만듭니다.</h2>
+          <p class="section-lead">
+            국내 틱톡 MCN 1위부터 라이브 에이전시까지, 10년 이상의 경험으로
+            인플루언서를 발굴하고 성장시켜 왔습니다. 성장한 크리에이터는 공동구매,
+            광고, 협찬으로 수익화를 이어갑니다.
+          </p>
+          <div class="chips">
+            <span class="chip">숏폼</span>
+            <span class="chip">틱톡</span>
+            <span class="chip">릴스</span>
+            <span class="chip">라이브</span>
+            <span class="chip">전문가 브랜딩</span>
+            <span class="chip">광고 캠페인</span>
           </div>
-        </form>
+          <div class="stats">
+            <div class="stat"><b>2019</b><span>설립 연도</span></div>
+            <div class="stat"><b>10년+</b><span>인플루언서 마케팅 경험</span></div>
+            <div class="stat"><b>500+</b><span>소속 · 협업 인플루언서</span></div>
+            <div class="stat"><b>3,000+</b><span>광고 캠페인</span></div>
+          </div>
+        </div>
       </section>
 
-      <!-- 상세 -->
-      <section id="view-detail" class="view" aria-label="게시글 상세" hidden>
-        <div class="toolbar">
-          <button type="button" class="ghost-btn" data-nav="list">← 목록</button>
+      <section class="section dark-band">
+        <div class="wrap">
+          <p class="section-kicker">Program</p>
+          <h2>필요한 트랙만 고르면 됩니다.</h2>
+          <p class="section-lead">의사, 변호사, 기업 대표부터 인플루언서를 꿈꾸는 일반인까지. 60일 단위로 기획·교육·제작을 붙입니다.</p>
+          <div class="card-grid">
+            <article class="card">
+              <span class="card-index">01 EXPERT</span>
+              <h3>전문가 프로그램</h3>
+              <p>의사, 변호사, 세무사, 기업대표를 위한 패키지. 기존 사업과 연결되는 콘텐츠로 2개월 안에 30개 영상을 올립니다.</p>
+            </article>
+            <article class="card">
+              <span class="card-index">02 CREATOR</span>
+              <h3>일반인 프로그램</h3>
+              <p>시간이 있고 인플루언서를 꿈꾸는 분을 위한 트랙. 아카데미와 맞춤 기획으로 계약 후에도 혼자 활동할 수 있게 만듭니다.</p>
+            </article>
+            <article class="card">
+              <span class="card-index">03 BUSINESS</span>
+              <h3>광고 · 협찬 · 공동구매</h3>
+              <p>브랜드와 인플루언서를 연결합니다. 캠페인 기획부터 숏폼 확산, 라이브커머스까지 한 라인으로 운영합니다.</p>
+            </article>
+          </div>
         </div>
-        <article class="detail-card" id="detail-card">
-          <h2 class="detail-title" id="detail-title"></h2>
-          <div class="detail-meta">
-            <span id="detail-author"></span>
-            <span id="detail-date"></span>
-          </div>
-          <p class="detail-content" id="detail-content"></p>
-        </article>
-
-        <section class="comments" aria-label="댓글">
-          <h3 class="comments-title">
-            댓글 <span id="comment-count">0</span>
-          </h3>
-          <ul id="comment-list" class="comment-list"></ul>
-          <div id="comments-empty" class="empty-inline" hidden>
-            첫 댓글을 남겨보세요.
-          </div>
-          <form id="comment-form" class="panel-form comment-form" autocomplete="off">
-            <input type="hidden" id="comment-post-id" />
-            <label class="field">
-              <span>작성자</span>
-              <input id="comment-author" type="text" maxlength="40" required placeholder="이름" />
-            </label>
-            <label class="field">
-              <span>댓글</span>
-              <textarea id="comment-content" rows="3" maxlength="5000" required placeholder="댓글을 입력하세요"></textarea>
-            </label>
-            <div class="form-actions">
-              <button type="submit" class="primary-btn">댓글 등록</button>
-            </div>
-          </form>
-        </section>
       </section>
-      
 
-      <p id="toast" class="toast" role="status" aria-live="polite" hidden></p>
+      <section class="section">
+        <div class="wrap">
+          <p class="section-kicker">Creators</p>
+          <h2>이미 결과가 나온 사람들</h2>
+          <p class="section-lead">프로그램에 참여한 전문가와 크리에이터의 샘플 레퍼런스입니다. 실제 사진·영상은 이후 교체됩니다.</p>
+          <div class="people-grid">
+            <article class="person">
+              <div class="person-photo">김</div>
+              <div class="person-body">
+                <strong>김태영 원장</strong>
+                <span class="tag">치과 · 73만 조회</span>
+              </div>
+            </article>
+            <article class="person">
+              <div class="person-photo alt-2">박</div>
+              <div class="person-body">
+                <strong>박요셉 대표</strong>
+                <span class="tag">인테리어 · 일 문의 30~50건</span>
+              </div>
+            </article>
+            <article class="person">
+              <div class="person-photo alt-3">효</div>
+              <div class="person-body">
+                <strong>냐냐효빈</strong>
+                <span class="tag">육아 · 120만 조회</span>
+              </div>
+            </article>
+            <article class="person">
+              <div class="person-photo alt-4">다</div>
+              <div class="person-body">
+                <strong>다람지율 가족</strong>
+                <span class="tag">키즈 · 300만 조회</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0">
+        <div class="wrap">
+          <p class="section-kicker">News</p>
+          <h2>언론과 소식</h2>
+          <div class="news-list" id="home-news"></div>
+          <p style="margin-top: 20px"><a class="ghost-btn" href="/news" style="border-color: var(--ink)">뉴스 전체 보기</a></p>
+        </div>
+      </section>
+
+      <section class="cta-band">
+        <div class="wrap">
+          <h2>인플루언서로 성장할 준비가 되셨나요?</h2>
+          <p>프로그램 신청, 기업 광고, 협찬·공동구매, 소속 문의까지 한 번에 받습니다.</p>
+          <p><a class="primary-btn" href="/contact">상담 신청하기</a></p>
+        </div>
+      </section>
     </main>
 
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <div class="footer-logo"><img src="assets/logo.png" alt="머스타드씨드" /></div>
+          <strong>머스타드씨드 주식회사</strong>
+          <p>인플루언서 마케팅 전문 기업<br />Influencer Expert Group</p>
+        </div>
+        <div>
+          <strong>오시는 길</strong>
+          <p>인천광역시 서구 파랑로 495<br />8층 1동 830호</p>
+          <p>대표 황요셉</p>
+        </div>
+        <div>
+          <strong>연락처</strong>
+          <p>hello@mustardseed.kr<br />070-0000-0000</p>
+          <p class="sample-note">이메일·전화는 샘플입니다.</p>
+        </div>
+      </div>
+      <div class="wrap">
+        <p class="copyright">© 2026 Mustardseed Corp. All rights reserved. · 일부 콘텐츠는 샘플입니다.</p>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
